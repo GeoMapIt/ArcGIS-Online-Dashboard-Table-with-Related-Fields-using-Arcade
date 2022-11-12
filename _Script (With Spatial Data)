@@ -12,10 +12,8 @@ portal = Portal('https://domain.maps.arcgis.com')
 var projects = FeatureSetByPortalItem(portal, 'z17b94feaaaf4b12908f7240d594j579', 0, ['Project_Name'])
 var submittals = FeatureSetByPortalItem(portal, 'z17b94feaaaf4b12908f7240d594j579', 1, ['Agency', 'Review_Type', 'Status_Date_Received', 'Status', 'Date_Submitted'])
 
-
 var fields = ''
 var attributes = ''
-
 
 //get project fields
 var project_fields = ''
