@@ -11,3 +11,7 @@ To accomplish this, the script does the following:
   - Iterates through submittals. Storing attribute information for submittals and each of their related projects. (attributes also filtered to fields above)
   - Formats the fields and attributes into a JSON string
   - Uses the JSON string to return a FeatureSet
+  
+  
+  There are two versions of this script. One with and one without spatial information, depending on use case.
+  Data expressions for tables don't need to return geometry or spatial information. Just fields and attributes.
