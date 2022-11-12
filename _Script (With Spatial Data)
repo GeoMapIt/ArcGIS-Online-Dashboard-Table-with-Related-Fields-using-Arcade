@@ -32,11 +32,8 @@ for (var submittal in First(submittals)){
     }
 }
 
-
-
 var test = '{"fields": [' + project_fields + '{' + submittal_fields
 fields = Left(test, Count(test)-2)+'],"spatialReference":{"wkid":4326},"geometryType":"esriGeometryPoint","features":['
-
 
 for (var submittal in submittals){
     var relatedproject = Text(First(FeatureSetByRelationshipName(submittal,"Project", ["Project_Name"])))
@@ -44,11 +41,9 @@ for (var submittal in submittals){
     var project_att_index = Find(",", relatedproject, Find('"attributes"',relatedproject))
     var project_attributes = Mid(relatedproject, project_att_index+1, Count(relatedproject)-project_att_index-3)
 
-
     //var submittal_att_index = Find('"attributes"',Text(submittal))
     var submittal_att_index = Find(",", Text(submittal), Find('"attributes"',Text(submittal)))
     var submittal_attributes = Mid(Text(submittal), submittal_att_index+1, Count(Text(submittal))-submittal_att_index-3)
-
 
     attributes = attributes + '{"attributes": {' + project_attributes + "," + submittal_attributes + '},"geometry":{"x":0,"y":0}},'
 }
@@ -56,4 +51,3 @@ for (var submittal in submittals){
 attributes = Left(attributes, Count(attributes)-1) + ']}'
 
 return (fields + attributes)
-
