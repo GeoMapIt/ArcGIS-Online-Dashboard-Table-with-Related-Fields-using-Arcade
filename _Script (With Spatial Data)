@@ -26,7 +26,6 @@ for (var project in First(projects)){
 //get submittal fields
 var submittal_fields = ''
 for (var submittal in First(submittals)){
-    
     if (submittal != 'OBJECTID'){
         submittal_fields = submittal_fields + `"name":"${submittal}","type":"esriFieldTypeString","alias":"${submittal}"},{`
     }
